@@ -15,14 +15,9 @@ jobs:
 
       - name: Configure
         run: |
-          cmake -S . -B build
-
-      # Build the HTML documentation
-      - name: Doxygen Action
-        uses: mattnotmitt/doxygen-action@v1.9.3
-        with:
-          doxyfile-path: build/docs/Doxyfile
-          working-directory: .
+          sudo apt-get install -y doxygen
+          cmake -S . -B build -DBUILD_DOC=ON
+          cmake --build build --target Doxygen
 
       # Deploy the HTML documentation to GitHub Pages
       - name: GH Pages Deployment
