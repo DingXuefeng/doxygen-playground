@@ -1,0 +1,7 @@
+add_subdirectory(src/doxygen_playground)
+
+add_library(doxygen_playground_Lib INTERFACE)
+target_link_libraries(doxygen_playground_Lib INTERFACE Cat)
+
+add_executable(doxygen_playground main.cc)
+target_link_libraries(doxygen_playground PRIVATE Cat)
