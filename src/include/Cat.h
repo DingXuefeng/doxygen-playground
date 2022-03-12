@@ -22,8 +22,8 @@ class Cat {
  public:
   /**
    * DocString for a method
+   * \f$\alpha\f$
    */
-   /// new string
   void run();
 };
 
